@@ -31,6 +31,7 @@
 	</div>
 
 	<div id="popup"></div>
+  <div id="readmessage"></div>
 
 	<div class="contactarea">
 		<h3>Contacts</h3>

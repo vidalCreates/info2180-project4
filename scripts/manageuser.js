@@ -1,5 +1,3 @@
-
-
 $("#compose").on("click",function compose(){
 	$('#popup').load('compose.php');
 });
@@ -19,6 +17,24 @@ $("#exit").on("click",function close(){
 	$("#popup").html("");
 	console.log("clicked")
 });
+
+function read(id){
+	var entry = true;
+	if($('#'+id).hasClass("newmessage")){
+		entry = false;
+		$('#'+id).removeClass("newmessage");
+	}
+	var mData = "id="+id+"&entry="+entry;
+	$.ajax({
+	    type: "POST",
+	    url: "../scripts/readmessage.php",
+	    data: mData,
+	    success: function (data) {
+        console.log("Sussess");
+				$("#readmessage").html(data);
+	    }
+	});
+}
 
 function savemessage(){
 	var fields = $('.field');
