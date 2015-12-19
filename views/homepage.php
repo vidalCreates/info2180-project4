@@ -22,10 +22,15 @@
 
 	<div id="buttons">
 		<button id="compose" class="btn">Compose</button>
-		<button id="logout" class="btn">LogOut</button>		
+    <?php
+      if (strpos($username, 'admin') !== FALSE){
+        echo "<button id='add' class='btn'>Add User</button>";
+      }
+    ?>
+		<button id="logout" class="btn">LogOut</button>
 	</div>
 
-	<div id="composemessage"></div>
+	<div id="popup"></div>
 
 	<div class="contactarea">
 		<h3>Contacts</h3>
