@@ -4,3 +4,8 @@ Due to vague instructions for setting up the database additional files and instr
 3. Proceed to index.php and login using username: admin and password: adminpass.
 
 NB: Any user with admin in thier username will be considered an admin. So to make a new admin, include admin within the username.
+
+Project Completed by
+Xavier Bryson: 620084236
+Andre Vidal: 620077449
+Nicanor Gordon: 620083325
