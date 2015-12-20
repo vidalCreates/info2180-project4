@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../styles/main.css"/>
     <link rel="stylesheet" href="../styles/form.css"/>
     <script type="text/javascript" src="../scripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../scripts/signup.js"></script>
     <script type="text/javascript" src="../scripts/login.js"></script>
 </head>
 <body>
@@ -16,11 +17,8 @@
             <h1>CheapoMail</h1>
         </div>
 
-        <div id="errors" class="hidden error">
-
-        </div>
-        
         <form onsubmit="return check()">
+            <h4 id="wrong" class="hidden error">Username/Password invalid.</h4>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" class="field"/>
             <label for="password">Password:</label>

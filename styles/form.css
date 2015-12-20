@@ -39,6 +39,7 @@ form{
 	position:absolute;
 	top:10%;
 	left:35%;
+	border:5px solid #8c4646;
 	border-radius: 20px;
 	background: white;
 	margin: 35px auto;
@@ -48,18 +49,33 @@ form{
 	z-index: 10;
 }
 
-form #exit{
+.popup{	
+	position:absolute;
+	top:10%;
+	left:35%;
+	border:5px solid #8c4646;
+	border-radius: 20px;
+	background: white;
+	margin: 35px auto;
+	overflow: auto;
+	padding: 30px;
+	width: 30%;
+	z-index: 10;
+}
+
+#messagebody{
+	background-color: #eaeaea;
+}
+
+#exit{
 	float:right;
 }
 
 #errors{
-	border: 5px solid  #FF3333;
 	color: #FF3333;
 	font-size: 15px;
 	margin: auto;
 	margin-top: 20px;
-	padding: 10px;
-	width: 40%;
 }
 
 #submit{

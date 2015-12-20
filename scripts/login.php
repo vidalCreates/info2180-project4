@@ -11,7 +11,6 @@
     $sql = "SELECT * FROM user WHERE username = '$username'";
     $result = $conn->query($sql);
 
-    echo $result->num_rows;
     if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()) {
 			if($row["password"]==$password){
@@ -26,4 +25,5 @@
 		echo 0;
 	}
 
+  $conn->close();
 ?>

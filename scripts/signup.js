@@ -24,7 +24,7 @@ function onSubmit(){
 	hidden = $('#hidden');
 	alphacheck = $('#fname, #lname, #username');
 	patt1 = /^([a-zA-Z0-9 -]+)$/;
-	patt = /^[0-9]+$/;
+	patt = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
 	valid = true;
 
 	fields.each(function(){
@@ -53,16 +53,34 @@ function onSubmit(){
 		valid = false;
 	}
 
-	/*console.log(id.val());
-	if(!patt.test(id.val())){
+	if(!patt.test(password.val())){
 		displayError('#errors');
 		displayError('#invalid');
-		id.addClass('invalid');
+		password.addClass('invalid');
 		valid = false;
-	}*/
-	return valid;
+	}
+
+	addUser(valid);
+
+	return false;
 }
 
+function addUser(bool){
+	if(bool == true){
+		var formData = "username="+$('#username').val()+"&firstname="+$('#fname').val()+"&lastname="+$('#lname').val()+"&password="+$('#password').val()+"&confirm="+$('#confirm').val();
+		console.log(formData);
+		$.ajax({
+				type: "POST",
+				url: "../scripts/adduser.php",
+				data: formData,
+				success: function (data) {
+					alert('Successfully added user.');
+				}
+		});
+	}else{
+		console.log('invalid');
+	}
+}
 
 function displayError(error){
 	if($(error).hasClass("hidden")){

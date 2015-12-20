@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="../styles/main.css"/>
     <link rel="stylesheet" href="../styles/form.css"/>
     <script type="text/javascript" src="../scripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../scripts/manageuser.js"></script>
 </head>
 <body>
-    <form action="../scripts/savemessage.php"method="post">
+    <form onsubmit="return savemessage();">
         <div><button type="button" id="exit">&#10006;</button></div>
         <h3 id="title">Compose Message</h3>
         <label for="recipients">Recipients:</label>

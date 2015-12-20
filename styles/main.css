@@ -54,7 +54,7 @@ body{
 	font-size: 22px;
 	height: 100%;
 	margin: 10px 10px;
-	width: 40%;
+	width: 25%;
 	text-align: center;
 }
 
@@ -80,35 +80,44 @@ body{
 	position:relative;
 	top:0px;
 	width:100%;
-	border:10px solid #99ccff;	
+	border:2px solid #99ccff;
 	background-color: white;
 	text-align: center;
 }
 
-.messagearea h3{	
+.messagearea h3{
 	position:relative;
 	top:0px;
 	width:100%;
-	border:10px solid #99ccff;	
+	border:2px solid #99ccff;
 	background-color: white;
-	text-align: center;	
+	text-align: center;
 }
 
 #contacts{
 	position:relative;
 	width:100%;
-	border:10px solid #99ccff;	
+	border:2px solid #99ccff;
 	background-color: white;
 	height:70%;
-	overflow-y: scroll; 
+	overflow-y: scroll;
 	text-align: center;
 }
 
 #messages{
 	position:relative;
 	width:100%;
-	border:10px solid #99ccff;	
+	border:2px solid #99ccff;
 	background-color: white;
 	height:70%;
-	overflow-y: scroll; 
+	overflow-y: scroll;
+}
+
+#wrong{
+	color: #FF3333;
+	font-size: 15px;
+}
+
+.newmessage{
+	font-weight: bold;
 }
