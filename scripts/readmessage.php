@@ -23,8 +23,18 @@
     while($row = $result->fetch_assoc()) {
       $body = $row['body'];
       $header = $row['subject'];
-      echo "<h3 id='title'>Message: $header</h3>";
-      echo "<div id='body'>$body</div>";
+      $sender = $row['user_id'];
+      $sql3 = "SELECT * FROM user WHERE id = '$sender'";
+      $result2 = $conn->query($sql3);
+      while ($row2 = $result2->fetch_assoc()) {
+          $sendername = $row2['firstname']." ".$row2['lastname'];
+          echo "<div class=\"popup\">";
+          echo "<div><button type=\"button\" id=\"exit\">&#10006;</button></div>";
+          echo "<h3 id='messagetitle'>Title: $header</h3>";
+          echo "<h3>From: $sendername</h3>";
+          echo "<div id='messagebody'>$body</div>";
+          echo "</div>";
+      }
     }
   }else{
     echo "Error Loading Message";
@@ -32,3 +42,9 @@
 
   $conn->close();
 ?>
+
+<script type="text/javascript">
+  $("#exit").on("click", function(){
+    $("#popup").html("");
+  });
+</script>

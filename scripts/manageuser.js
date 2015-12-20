@@ -11,12 +11,33 @@ $("#logout").on("click",function logout(){
 });
 
 $('#contacts').load('showcontacts.php');
-$('#messages').load('showmessages.php');
+show("false");
+//$('#messages').load('showmessages.php');
 
-$("#exit").on("click",function close(){
+$("#exit").on("click", function(){
 	$("#popup").html("");
-	console.log("clicked")
 });
+
+$("#all").on("click", function(){
+	show("true")
+});
+
+$("#recent").on("click", function(){
+	show("false")
+});
+
+function show(bool){
+	var mData = "all="+bool;
+	$.ajax({
+	    type: "GET",
+	    url: "../views/showmessages.php",
+	    data: mData,
+	    success: function (data) {
+        console.log("Sussess");
+				$("#messages").html(data);
+	    }
+	});
+}
 
 function read(id){
 	var entry = true;
@@ -31,7 +52,7 @@ function read(id){
 	    data: mData,
 	    success: function (data) {
         console.log("Sussess");
-				$("#readmessage").html(data);
+				$("#popup").html(data);
 	    }
 	});
 }

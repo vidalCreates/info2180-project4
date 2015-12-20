@@ -20,6 +20,10 @@
 	?>
 	<div id="header"><h1> <?php echo "Hello $firstname $lastname"; ?> </h1></div>
 
+  <div id="toggle">
+      <button type="button" class="btnToggle" id="all">All</button>
+      <button type="button" class="btnToggle" id="recent">Recent</button>
+    </div>
 	<div id="buttons">
 		<button id="compose" class="btn">Compose</button>
     <?php

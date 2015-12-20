@@ -6,8 +6,13 @@
     		die("Connection failed: " . $conn->connect_error);
     	  }
         $id = $_SESSION['id'];
+        $all = $_GET['all'];
 
-        $sql = "SELECT * FROM message WHERE recipient_ids = '$id' ORDER BY id DESC LIMIT 10";
+        if($all == "true"){
+              $sql = "SELECT * FROM message WHERE recipient_ids = '$id' ORDER BY id DESC";
+        }else{
+          $sql = "SELECT * FROM message WHERE recipient_ids = '$id' ORDER BY id DESC LIMIT 10";
+        }
         $result = $conn->query($sql);
 
         if($result->num_rows > 0){

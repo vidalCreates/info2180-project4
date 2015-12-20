@@ -38,7 +38,28 @@ body{
 	top:20%;
 	height:7.5%;
 	width:50%;
-	left:50%;
+	left:60%;
+}
+
+#toggle{
+	position: fixed;
+	top:25%;
+	height:7.5%;
+	width:50%;
+	left:40%;
+}
+
+.btnToggle{
+	background: #FE5C5C;
+	border: 0;
+	border-bottom: 5px solid #FFF77D;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	font-size: 22px;
+	height: 50%;
+	margin: 10px 10px;
+	width: 15%;
 }
 
 .btn{
